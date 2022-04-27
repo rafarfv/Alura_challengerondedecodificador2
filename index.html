@@ -9,21 +9,56 @@
             if(res==""){
                 document.getElementById("res").innerHTML="<img src='img/1.png'>";
             }else{
-                document.getElementById("res").innerHTML=res.value;
+                document.getElementById("res").innerHTML=res;
             }
         }
-        function cpto(id){
+        function descrip(id){
             var valor = document.getElementById(id);
             var res = valor;
             mostra(res);
         }
-        function dcptc(id){
+        function crip(id){
+            var txt;
+            var i=0;
+            var result ="";
             var valor = document.getElementById(id);
-            var res = valor;
-            mostra(res);
+            txt = valor.value;
+            var array = txt.split('');
+            
+            while(i < txt.length){
+                switch (array[i]){
+                    case "a":
+                        array[i]="ai";
+                        break;
+                }
+                switch (array[i]){
+                    case "e":
+                        array[i]="enter";
+                        break;
+                }
+                switch (array[i]){
+                    case "i":
+                        array[i]="imes";
+                        break;
+                }
+                switch (array[i]){
+                    case "o":
+                        array[i]="ober";
+                        break;
+                }
+                switch (array[i]){
+                    case "u":
+                        array[i]="ufat";
+                        break;
+                }
+                result = result + array[i];
+                i++;
+            }
+            
+            mostra(result);
         }
         
-        
+        console.log(descrip);
         
         
     </script>
@@ -33,10 +68,10 @@
                 <form action="#" method="#">
                 <h4>Texto Original</h4>
                 <input type="text" placeholder="Insira o texto" name="cripto" id="cripto" class="campo" autofocus>
-                <input type="button" value="Criptografar" class="botao" onclick="dcptc('cripto')"">
+                <input type="button" value="Criptografar" class="botao" onclick="crip('cripto')">
                 <h4>Texto Criptografado</h4>
                 <input type="text" placeholder="Insira o texto" name="decripto" id="desc" class="campo">
-                <input type="button" value="Descriptografar" class="botao" onclick="cpto('desc')">
+                <input type="button" value="Descriptografar" class="botao" onclick="descrip('desc')">
             </form>
             <h4>Resultado</h4>
             <div class="textarea" id="res">
