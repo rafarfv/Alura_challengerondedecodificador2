@@ -4,20 +4,47 @@
         <title>Criptografia - JavaScript</title>
     </head>
     <link href="css/style.css" rel="stylesheet">
-
-    <body>
-        <div class="nav">
-            <div class="content">
-                <h3>Criptador</h3>
+    <script>
+        function mostra(res){
+            if(res==""){
+                document.getElementById("res").innerHTML="<img src='img/1.png'>";
+            }else{
+                document.getElementById("res").innerHTML=res.value;
+            }
+        }
+        function cpto(id){
+            var valor = document.getElementById(id);
+            var res = valor;
+            mostra(res);
+        }
+        function dcptc(id){
+            var valor = document.getElementById(id);
+            var res = valor;
+            mostra(res);
+        }
+        
+        
+        
+        
+    </script>
+    <body onload="mostra('');">
+        <div class="content">
+            <h3>Criptador</h3>               
                 <form action="#" method="#">
-                    <h4>Texto Original</h4>
-                    <input type="text" placeholder="Insira o texto" name="cripto" class="campo" autofocus>
-                    <input type="submit" value="Criptografar" class="botao">
-                    <h4>Texto Criptografado</h4>
-                    <input type="text" placeholder="Insira o texto" name="decripto" class="campo">
-                    <input type="submit" value="Decriptografar" class="botao">
-                </form>
+                <h4>Texto Original</h4>
+                <input type="text" placeholder="Insira o texto" name="cripto" id="cripto" class="campo" autofocus>
+                <input type="button" value="Criptografar" class="botao" onclick="dcptc('cripto')"">
+                <h4>Texto Criptografado</h4>
+                <input type="text" placeholder="Insira o texto" name="decripto" id="desc" class="campo">
+                <input type="button" value="Descriptografar" class="botao" onclick="cpto('desc')">
+            </form>
+            <h4>Resultado</h4>
+            <div class="textarea" id="res">
             </div>
+        </div>
+        <div class="footer">
+            Desenvolvido por Rafael de Freitas Vinagre | rafarfv@gmail.com | Curso Front-end Alura
         </div>
     </body>
 </html>
+
