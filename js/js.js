@@ -12,10 +12,17 @@ function mostra(res){
 
 //funcao de decriptografar
 function descrip(id){
-    var valor = document.getElementById(id);
-    var res = valor;
-    mostra(res);
-}
+    //recebe o valor do elemento
+    var txt = document.getElementById(id).value;
+    //realiza a substituições na sring, txt
+    txt = txt.replace(/ai/g, "a");
+    txt = txt.replace(/enter/g, "e");
+    txt =  txt.replace(/imes/g, "i");
+    txt = txt.replace(/ober/g, "o");
+    txt = txt.replace(/ufat/g, "u");
+    //chama a função mostra
+    mostra(txt);
+    }
 
 //função de criptografar
 function crip(id){
@@ -23,37 +30,30 @@ function crip(id){
     var result ="";
     var txt = document.getElementById(id).value;
     var array = txt.split('');
-    
+    //examina toda a string e fas a substituições
     while(i < txt.length){
         switch (array[i]){
             case "a":
                 array[i]="ai";
                 break;
-        }
-        switch (array[i]){
             case "e":
                 array[i]="enter";
                 break;
-        }
-        switch (array[i]){
             case "i":
                 array[i]="imes";
                 break;
-        }
-        switch (array[i]){
             case "o":
                 array[i]="ober";
                 break;
-        }
-        switch (array[i]){
             case "u":
                 array[i]="ufat";
                 break;
         }
+        //concate os resultados
         result = result + array[i];
         i++;
     }
-    
+    //chama função mostra
     mostra(result);
 }
 
@@ -66,7 +66,3 @@ function copiar(){
         }
     );
 }
-
-
-
-console.log();
