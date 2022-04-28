@@ -4,82 +4,31 @@
         <title>Criptografia - JavaScript</title>
     </head>
     <link href="css/style.css" rel="stylesheet">
-    <script>
-        function mostra(res){
-            if(res==""){
-                document.getElementById("res").innerHTML="<img src='img/1.png'>";
-            }else{
-                document.getElementById("res").innerHTML=res;
-            }
-        }
-        function descrip(id){
-            var valor = document.getElementById(id);
-            var res = valor;
-            mostra(res);
-        }
-        function crip(id){
-            var txt;
-            var i=0;
-            var result ="";
-            var valor = document.getElementById(id);
-            txt = valor.value;
-            var array = txt.split('');
-            
-            while(i < txt.length){
-                switch (array[i]){
-                    case "a":
-                        array[i]="ai";
-                        break;
-                }
-                switch (array[i]){
-                    case "e":
-                        array[i]="enter";
-                        break;
-                }
-                switch (array[i]){
-                    case "i":
-                        array[i]="imes";
-                        break;
-                }
-                switch (array[i]){
-                    case "o":
-                        array[i]="ober";
-                        break;
-                }
-                switch (array[i]){
-                    case "u":
-                        array[i]="ufat";
-                        break;
-                }
-                result = result + array[i];
-                i++;
-            }
-            
-            mostra(result);
-        }
-        
-        console.log(descrip);
-        
-        
-    </script>
+    <script src="js/js.js"></script>
     <body onload="mostra('');">
         <div class="content">
             <h3>Criptador</h3>               
                 <form action="#" method="#">
                 <h4>Texto Original</h4>
                 <input type="text" placeholder="Insira o texto" name="cripto" id="cripto" class="campo" autofocus>
-                <input type="button" value="Criptografar" class="botao" onclick="crip('cripto')">
+                <input type="button" value="Criptografar" class="botao transition-1" onclick="crip('cripto')">
                 <h4>Texto Criptografado</h4>
                 <input type="text" placeholder="Insira o texto" name="decripto" id="desc" class="campo">
-                <input type="button" value="Descriptografar" class="botao" onclick="descrip('desc')">
+                <input type="button" value="Descriptografar" class="botao transition-1" onclick="descrip('desc')">
             </form>
             <h4>Resultado</h4>
-            <div class="textarea" id="res">
+            <div class="elemento_center" id="img">
+                
             </div>
+            <div class="elemento_center" id="result">
+                <textarea class="textarea" id="res"></textarea>
+            </div>
+            <div class="elemento_center">
+                <input type="button" class="botao_simples transition-1" value="Copiar Texto" onclick="copiar();" id="botao_exe">
+            </div>   
         </div>
         <div class="footer">
             Desenvolvido por Rafael de Freitas Vinagre | rafarfv@gmail.com | Curso Front-end Alura
         </div>
     </body>
 </html>
-
