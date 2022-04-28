@@ -60,16 +60,43 @@ h4{
     background-color: rgb(7, 55, 146);
     cursor: pointer;
 }
-
 .botao:hover{
     background-color: rgb(137, 178, 255);
 }
 
+.botao_simples{
+    display: inline-block;
+    border: 1px solid #000; 
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    width: 150px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+.botao_simples:hover{
+    background-color: rgb(119, 120, 121);
+}
+
 .textarea{
-    width: 90%;
-    height: auto;
+    height: 299px;
+    width: 231px;
     border: 1px solid #000;
     border-radius: 5px;
     padding: 10px;
+    text-align: left;
+    
+}
+
+.transition-1{
+  transition: all .3s ease-out;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.elemento_center{
+    display:block;
     text-align: center;
 }
